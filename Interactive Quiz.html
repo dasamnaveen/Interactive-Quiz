@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Interactive Quiz</title>
+</head>
+<body>
+    <form onsubmit="myFunc(); return false;">
+        <fieldset>
+            <legend>Question 01</legend>
+            <h4>Who is the Founder of GITAM University?</h4>
+            <label>
+                <input type="radio" name="question1" value="11"> Sri Bharat Mathukumilli
+                <input type="radio" name="question1" value="12"> Virander Singh Chauhan
+                <input type="radio" name="question1" value="13"> M.V.V.S Murthi
+                <input type="radio" name="question1" value="14"> Dayananda Siddavattam
+            </label>
+            <p id="first"></p>
+        </fieldset>
+
+        <fieldset>
+            <legend>Question 02</legend>
+            <h4>How many campuses does GITAM University have?</h4>
+            <label>
+                <input type="radio" name="question2" value="21"> 1
+                <input type="radio" name="question2" value="22"> 4
+                <input type="radio" name="question2" value="23"> 2
+                <input type="radio" name="question2" value="24"> 3
+            </label>
+            <p id="second"></p>
+        </fieldset>
+
+        <button type="submit">Submit</button>
+    </form><br>
+
+    <script>
+        function myFunc() {
+            let ans3 = document.querySelector('input[name="question1"]:checked');
+            let ans2 = document.querySelector('input[name="question2"]:checked');
+
+            if (ans3 && ans3.value === "13") {
+                document.getElementById('first').innerHTML = "Correct";
+            } else {
+                document.getElementById('first').innerHTML = "Wrong answer! Correct answer is M.V.V.S Murthi";
+            }
+            if (ans2 && ans2.value === "22") {
+                document.getElementById('second').innerHTML = "Correct";
+            } else {
+                document.getElementById('second').innerHTML = "Wrong answer! Correct answer is 4, Including GIMSR";
+            }
+        }
+    </script>
+</body>
+</html>
